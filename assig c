@@ -1,0 +1,77 @@
+// Class representing a Student
+public class Student {
+    // Private fields
+    private String name;
+    private int age;
+    private String studentId;
+
+    // Public constructor
+    public Student(String name, int age, String studentId) {
+        this.name = name;
+        this.age = age;
+        this.studentId = studentId;
+    }
+
+    // Public method to get the name
+    public String getName() {
+        return name;
+    }
+
+    // Public method to set the name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Public method to get the age
+    public int getAge() {
+        return age;
+    }
+
+    // Public method to set the age
+    public void setAge(int age) {
+        if (age > 0) { // Simple validation
+            this.age = age;
+        } else {
+            System.out.println("Please enter a valid age.");
+        }
+    }
+
+    // Public method to get the student ID
+    public String getStudentId() {
+        return studentId;
+    }
+
+    // Public method to set the student ID
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    // Public method to display student information
+    public void displayInfo() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Age: " + age);
+        System.out.println("Student ID: " + studentId);
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        // Create a Student object
+        Student student = new Student("Alice", 20, "S12345");
+
+        // Display initial information
+        student.displayInfo();
+
+        // Update the student's name and age
+        student.setName("Alice Johnson");
+        student.setAge(21);
+
+        // Display updated information
+        System.out.println("\nUpdated Student Information:");
+        student.displayInfo();
+
+        // Attempt to set an invalid age
+        student.setAge(-5); // This will trigger the validation message
+    }
+}
