@@ -1,0 +1,57 @@
+public class MathOperations {
+
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method to add two double values
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method to subtract two integers
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    // Method to multiply two integers
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    // Method to divide two integers
+    public double divide(int a, int b) {
+        if (b != 0) {
+            return (double) a / b; // Cast to double for accurate division
+        } else {
+            System.out.println("Error: Division by zero.");
+            return 0; // Return 0 or handle as needed
+        }
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        MathOperations mathOps = new MathOperations();
+
+        // Demonstrating addition
+        System.out.println("Addition of 5 and 10: " + mathOps.add(5, 10));
+        System.out.println("Addition of 5, 10, and 15: " + mathOps.add(5, 10, 15));
+        System.out.println("Addition of 5.5 and 10.5: " + mathOps.add(5.5, 10.5));
+
+        // Demonstrating subtraction
+        System.out.println("Subtraction of 10 from 20: " + mathOps.subtract(20, 10));
+
+        // Demonstrating multiplication
+        System.out.println("Multiplication of 5 and 4: " + mathOps.multiply(5, 4));
+
+        // Demonstrating division
+        System.out.println("Division of 20 by 4: " + mathOps.divide(20, 4));
+        System.out.println("Division of 20 by 0: " + mathOps.divide(20, 0)); // This will show an error
+    }
+}
