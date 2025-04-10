@@ -1,0 +1,58 @@
+// Class representing a Person
+class Person {
+    // Private field
+    private String name;
+
+    // Public constructor
+    public Person(String name) {
+        this.name = name;
+    }
+
+    // Public method to get the name
+    public String getName() {
+        return name;
+    }
+
+    // Protected method to display information
+    protected void displayInfo() {
+        System.out.println("Person Name: " + name);
+    }
+}
+
+// Class representing an Employee, which extends Person
+class Employee extends Person {
+    // Private field
+    private double salary;
+
+    // Public constructor
+    public Employee(String name, double salary) {
+        super(name); // Call the constructor of the superclass (Person)
+        this.salary = salary;
+    }
+
+    // Public method to get the salary
+    public double getSalary() {
+        return salary;
+    }
+
+    // Public method to display employee information
+    public void displayEmployeeInfo() {
+        // Call the protected method from the superclass
+        displayInfo();
+        System.out.println("Employee Salary: " + salary);
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        // Create a Person object
+        Person person = new Person("Alice");
+        System.out.println("Name: " + person.getName());
+        // person.displayInfo(); // This line would cause an error because displayInfo() is protected
+
+        // Create an Employee object
+        Employee employee = new Employee("Bob", 75000);
+        employee.displayEmployeeInfo(); // This will call the public method to display employee info
+    }
+}
