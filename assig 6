@@ -1,0 +1,71 @@
+// Define an interface named Shape
+interface Shape {
+    // Abstract method to calculate area
+    double calculateArea();
+
+    // Abstract method to calculate perimeter
+    double calculatePerimeter();
+}
+
+// Class that implements the Shape interface
+class Rectangle implements Shape {
+    // Fields for the rectangle's dimensions
+    private double length;
+    private double width;
+
+    // Constructor to initialize the rectangle's dimensions
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implement the calculateArea method
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Implement the calculatePerimeter method
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Class that implements the Shape interface
+class Circle implements Shape {
+    // Field for the circle's radius
+    private double radius;
+
+    // Constructor to initialize the circle's radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implement the calculateArea method
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Implement the calculatePerimeter method
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Shape rectangle = new Rectangle(5, 3);
+        System.out.println("Rectangle Area: " + rectangle.calculateArea());
+        System.out.println("Rectangle Perimeter: " + rectangle.calculatePerimeter());
+
+        // Create a Circle object
+        Shape circle = new Circle(4);
+        System.out.println("Circle Area: " + circle.calculateArea());
+        System.out.println("Circle Perimeter: " + circle.calculatePerimeter());
+    }
+}
