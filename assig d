@@ -1,0 +1,74 @@
+// Base class representing an Animal
+class Animal {
+    // Fields
+    private String name;
+    private int age;
+
+    // Constructor
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display animal information
+    public void displayInfo() {
+        System.out.println("Animal Name: " + name);
+        System.out.println("Animal Age: " + age);
+    }
+
+    // Method to make a sound
+    public void makeSound() {
+        System.out.println(name + " makes a sound.");
+    }
+}
+
+// Derived class representing a Dog
+class Dog extends Animal {
+    // Additional field specific to Dog
+    private String breed;
+
+    // Constructor
+    public Dog(String name, int age, String breed) {
+        super(name, age); // Call the constructor of the base class (Animal)
+        this.breed = breed;
+    }
+
+    // Overriding the makeSound method
+    @Override
+    public void makeSound() {
+        System.out.println(getName() + " barks.");
+    }
+
+    // Method to get the dog's breed
+    public String getBreed() {
+        return breed;
+    }
+
+    // Method to display dog information
+    public void displayDogInfo() {
+        displayInfo(); // Call the base class method
+        System.out.println("Dog Breed: " + breed);
+    }
+
+    // Method to get the name (using reflection to access private field)
+    private String getName() {
+        return super.getClass().getDeclaredFields()[0].getName(); // Accessing private field name
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        // Create an Animal object
+        Animal animal = new Animal("Generic Animal", 5);
+        animal.displayInfo();
+        animal.makeSound();
+
+        System.out.println();
+
+        // Create a Dog object
+        Dog dog = new Dog("Buddy", 3, "Golden Retriever");
+        dog.displayDogInfo();
+        dog.makeSound();
+    }
+}
