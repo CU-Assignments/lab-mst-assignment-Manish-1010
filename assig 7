@@ -1,0 +1,32 @@
+// Custom exception class
+class InvalidAgeException extends Exception {
+    // Constructor that accepts a message
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+// Class to demonstrate the use of the custom exception
+public class AgeValidator {
+    // Method to validate age
+    public static void validateAge(int age) throws InvalidAgeException {
+        if (age < 0) {
+            throw new InvalidAgeException("Age cannot be negative: " + age);
+        } else {
+            System.out.println("Valid age: " + age);
+        }
+    }
+
+    // Main method to run the program
+    public static void main(String[] args) {
+        int[] ages = {25, -5, 30, -1, 40}; // Sample ages to validate
+
+        for (int age : ages) {
+            try {
+                validateAge(age);
+            } catch (InvalidAgeException e) {
+                System.out.println("Exception caught: " + e.getMessage());
+            }
+        }
+    }
+}
