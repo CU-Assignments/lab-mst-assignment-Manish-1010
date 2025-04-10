@@ -1,0 +1,49 @@
+public class DataTypesDemo {
+    public static void main(String[] args) {
+        // Primitive Data Types
+        // Integer type
+        int age = 25;
+        System.out.println("Age: " + age);
+
+        // Double type
+        double salary = 50000.50;
+        System.out.println("Salary: " + salary);
+
+        // Character type
+        char grade = 'A';
+        System.out.println("Grade: " + grade);
+
+        // Boolean type
+        boolean isEmployed = true;
+        System.out.println("Is Employed: " + isEmployed);
+
+        // Byte type
+        byte smallNumber = 100;
+        System.out.println("Small Number (byte): " + smallNumber);
+
+        // Short type
+        short mediumNumber = 30000;
+        System.out.println("Medium Number (short): " + mediumNumber);
+
+        // Long type
+        long largeNumber = 100000L;
+        System.out.println("Large Number (long): " + largeNumber);
+
+        // Float type
+        float height = 5.9f;
+        System.out.println("Height (float): " + height);
+
+        // Reference Data Type
+        // String type
+        String name = "John Doe";
+        System.out.println("Name: " + name);
+
+        // Example of using different data types in a calculation
+        double totalSalary = salary * 1.1; // Assuming a 10% raise
+        System.out.println("Total Salary after raise: " + totalSalary);
+        
+        // Example of concatenating strings with other data types
+        String employeeInfo = "Employee Name: " + name + ", Age: " + age + ", Salary: " + salary;
+        System.out.println(employeeInfo);
+    }
+}
